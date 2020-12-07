@@ -8,7 +8,7 @@ public abstract class User {
     private String address;
     private String phoneNumber;
 
-    public User(String name , String email ){
+    public User(String name , String email  ){
         this.name = name;
         this.email = email;
     }
@@ -55,8 +55,8 @@ public abstract class User {
 
     @Override
     public String toString(){
-        return "model.User: " + name + ", Email: "+email+
-                "\nAddreess: "+address+". Phone: "+phoneNumber;
+        return "User: " + name + "\nEmail: "+email+
+                "\nAddreess: "+address+"\nPhone: "+phoneNumber;
     }
 
     public abstract void showDataUser();

@@ -10,8 +10,9 @@ public class Doctor extends User{
     private String speciality;
     private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
-    public Doctor(String name , String email){
+    public Doctor(String name , String email, String speciality){
         super(name,email);
+        this.speciality = speciality;
     }
 
     public String getSpeciality() {
