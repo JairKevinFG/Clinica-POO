@@ -3,7 +3,9 @@ import model.Doctor;
 import model.Patient;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class UIMenu {
 
@@ -86,7 +88,8 @@ public class UIMenu {
                         emailCorrect = true;
                         //obtener el usuario logeado
                         patientLogged = p;
-
+                        System.out.println(p);
+                        UIPatientMenu.showPatientMenu();
                     }
                 }
             }

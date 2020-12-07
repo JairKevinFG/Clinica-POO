@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UIDoctorMenu {
-    //doctores que tienen cita
+
+    //doctores que tienen fechas disponibles
     public static ArrayList<Doctor> doctorsAvailableAppointments = new ArrayList<>();
 
     public static void showDoctorMenu(){
@@ -15,7 +16,7 @@ public class UIDoctorMenu {
             System.out.println("\n\n");
             System.out.println("Doctor");
             System.out.println("Bienvenido "+ UIMenu.doctorLogged.getName());
-            System.out.println("1. Agregar cita");
+            System.out.println("1. Agregar cita disponible ");
             System.out.println("2. Citas programadas");
             System.out.println("0. Cerrar sesion");
 

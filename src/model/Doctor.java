@@ -8,6 +8,7 @@ import java.util.Date;
 public class Doctor extends User{
 
     private String speciality;
+    //fechas disponibles
     private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     public Doctor(String name , String email, String speciality){
@@ -23,7 +24,7 @@ public class Doctor extends User{
         this.speciality = speciality;
     }
 
-    // agregar una cita al doctor
+    // agregar una fecha disponible al array
     public void addAvailableAppointment(String date ,String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date,time));
     }

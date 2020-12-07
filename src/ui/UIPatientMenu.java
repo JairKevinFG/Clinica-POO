@@ -3,7 +3,8 @@ package ui;
 import java.util.Scanner;
 
 public class UIPatientMenu {
-    public static void main(String[] args) {
+
+    public static void showPatientMenu() {
         int response  = 0;
         do{
             System.out.println("\n\n");
@@ -18,6 +19,7 @@ public class UIPatientMenu {
 
             switch (response){
                 case 1 :
+                    showBookAppointmentMenu();
                     break;
                 case 2:
                     break;
@@ -33,6 +35,11 @@ public class UIPatientMenu {
         do {
             System.out.println(":: Reservar cita");
             System.out.println("::Selecciona la fecha: ");
+
+
+
+
+
         }while(response !=0);
     }
 }
