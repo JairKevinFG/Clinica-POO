@@ -28,6 +28,7 @@ public class UIPatientMenu {
                     showBookAppointmentMenu();
                     break;
                 case 2:
+                    showPatientMyAppointments();
                     break;
                 case 0 :
                     UIMenu.showMenu();
@@ -65,7 +66,7 @@ public class UIPatientMenu {
             int responseDateSelected  = Integer.parseInt(sc.nextLine());
             Map<Integer , Doctor > doctorAvailableSelected = doctors.get(responseDateSelected);
             Integer indexDate = 0 ;
-            Doctor doctorSelected = new Doctor("","");
+            Doctor doctorSelected = new Doctor("","","");
             for(Map.Entry< Integer , Doctor> doc  :doctorAvailableSelected.entrySet()){
                 indexDate = doc.getKey();
                 doctorSelected = doc.getValue();
@@ -85,4 +86,27 @@ public class UIPatientMenu {
 
         }while(response !=0);
     }
+
+    private  static  void showPatientMyAppointments(){
+        int response = 0 ;
+        do{
+            System.out.println("Mis citas ");
+            if(UIMenu.patientLogged.getAppointmentDoctors().size() == 0){
+                System.out.println("No tiene fechas");
+                break;
+            }
+
+            for (int i= 0 ; i< UIMenu.patientLogged.getAppointmentDoctors().size() ; i++){
+                int j = i + 1;
+                System.out.println(j + ". " +
+                        "Date: " + UIMenu.patientLogged.getAppointmentDoctors().get(i).getDate() +
+                        "Time: " + UIMenu.patientLogged.getAppointmentDoctors().get(i).getTime() +
+                        "\n Doctor : " + UIMenu.patientLogged.getAppointmentDoctors().get(i).getDoctor().getName());
+                                    }
+            System.out.println("0. Regresar");
+        }while(response != 0);
+
+    }
+
+
 }
