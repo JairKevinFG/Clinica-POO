@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class UIDoctorMenu {
 
     //doctores que tienen fechas disponibles
-    public static ArrayList<Doctor> doctorsAvailableAppointments = new ArrayList<>();
+    public static ArrayList<Doctor> doctoresFechasDisponibles = new ArrayList<>();
 
     public static void showDoctorMenu(){
         int response = 0 ;
@@ -68,7 +68,7 @@ public class UIDoctorMenu {
                 }while(responseTime == 2);
                 UIMenu.doctorLogged.addAvailableAppointment(date,time);
                 checkDoctorAvailableAppointments(UIMenu.doctorLogged);
-                System.out.println(doctorsAvailableAppointments);
+                System.out.println(doctoresFechasDisponibles);
 
             }else if ( response == 0) {
                 showDoctorMenu();
@@ -78,9 +78,9 @@ public class UIDoctorMenu {
 
     private static void checkDoctorAvailableAppointments(Doctor doctor){
         if(doctor.getAvailableAppointments().size() > 0
-                && !doctorsAvailableAppointments.contains(doctor)){
+                && !doctoresFechasDisponibles.contains(doctor)){
             System.out.println("aa");
-            doctorsAvailableAppointments.add(doctor);
+            doctoresFechasDisponibles.add(doctor);
         }
     }
 

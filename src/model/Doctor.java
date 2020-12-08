@@ -9,7 +9,7 @@ public class Doctor extends User{
 
     private String speciality;
     //fechas disponibles
-    private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
+    private ArrayList<AvailableAppointment> fechasDisponibles = new ArrayList<>();
 
     public Doctor(String name , String email, String speciality){
         super(name,email);
@@ -26,15 +26,15 @@ public class Doctor extends User{
 
     // agregar una fecha disponible al array
     public void addAvailableAppointment(String date ,String time){
-        availableAppointments.add(new Doctor.AvailableAppointment(date,time));
+        fechasDisponibles.add(new Doctor.AvailableAppointment(date,time));
     }
     public ArrayList<AvailableAppointment> getAvailableAppointments(){
-        return availableAppointments;
+        return fechasDisponibles;
     }
 
     @Override
     public String toString(){
-        return super.toString() +  "\nSpeciality: " + speciality + "\nAvailable: " + availableAppointments.toString();
+        return super.toString() +  "\nSpeciality: " + speciality + "\nAvailable: " + fechasDisponibles.toString();
     }
 
     @Override
@@ -69,12 +69,12 @@ public class Doctor extends User{
             this.id = id;
         }
 
-        public Date getDate() {
+        public Date getDate(String DATE) {
             return date;
         }
 
         // Transformar fechas de formato Date a String:this.date = format.format(dateAsDate);
-        public String getDate(String DATE) {
+        public String getDate() {
             return format.format(date);
         }
 
